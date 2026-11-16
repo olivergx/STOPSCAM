@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scam-test | StopScam.dk</title>
+    <!--Skrifttypen Atkinson Hyperlegible er lavet til svagtseende-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Vi bruger defer, så HTML'en loader før JS-->
+    <script src="js/script.js" defer></script>
+    <script src="js/scamtest.js" defer></script>
+    <script src="https://kit.fontawesome.com/bc7c5f3280.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--Skip til hovedindhold-->
+    <a href="#hovedindhold" class="screen-reader-text">Hop til hovedindhold</a>
+
+    <header>
+      <nav>
+        <a href="index.html" class="logo">StopScam.dk</a>
+
+        <!--Vi bruger en button, fordi knappen laver en "action" (åbner menuen)-->
+        <!--aria-expanded fortæller skærmlæseren, om menuen er åben eller lukket-->
+        <!--aria-controls fortæller skærmlæseren, at knappen styrer menuen med id="menu"-->
+        <!--aria-label fortæller skærmlæseren, hvad knappen gør (der er kun et ikon)-->
+        <button
+          id="bars"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="åbn navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!--Navigation-->
+        <ul id="menu">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="viden.html">Viden</a></li>
+          <li><a class="active" href="scamtest.html">Scam-test</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Hovedindhold - id'et bruges af "Hop til hovedindhold"-linket-->
+    <main id="hovedindhold">
+      <h1>Scam-testen: Er det svindel?</h1>
+      <p>
+        Her er 10 beskeder, som du kunne få. Nogle er svindel. Andre er ægte. Gæt først selv.
+        Tryk så på ”Vis svaret” under beskeden.
+      </p>
+      <p>Alle beskeder, navne og links er opdigtede.</p>
+
+      <div class="besked">
+        <h2>Besked 1 af 10</h2>
+          <!--Beskeden er skrevet som tekst i stedet for et billede.
+              Så kan den forstørres uden at blive sløret, og skærmlæsere kan læse den op-->
+        <div class="sms">
+          <p class="afsender">SMS fra: PostNord</p>
+          <p>Din pakke kan ikke leveres. Du mangler at betale told på 12,50 kr. Betal inden 24 timer, ellers sendes pakken retur.</p>
+          <p class="falsk-link">Link i beskeden: postnord-dk-levering.com/betal</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+          <!--aria-expanded fortæller skærmlæseren, om svaret er vist eller skjult-->
+          <!--aria-controls fortæller skærmlæseren, at knappen styrer boksen med id="svar-1"-->
+        <button
+          id="knap-1"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-1"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-1" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Linket ender ikke på postnord.dk. Beløbet er lille, så du ikke tænker dig om. Og du bliver presset med en frist. Venter du en pakke, så tjek den selv i den rigtige app.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 2 af 10</h2>
+        <div class="sms">
+          <p class="afsender">SMS fra: MitID</p>
+          <p>Din MitID udløber i dag. Bekræft din identitet nu, ellers mister du adgang til netbank og Digital Post.</p>
+          <p class="falsk-link">Link i beskeden: mitid-forny.net/login</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-2"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-2"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-2" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Linket er ikke mitid.dk, og beskeden vil gøre dig bange. Skriv aldrig dine MitID-oplysninger via et link i en SMS.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 3 af 10</h2>
+        <div class="sms">
+          <p class="afsender">E-mail fra: Netflix</p>
+          <p>Afsender-adresse: support@netflix-konto-hjaelp.com</p>
+          <p>Emne: Din betaling blev afvist</p>
+          <p>Hej kunde. Vi kunne ikke trække betalingen for dit abonnement. Opdater dit kort inden 48 timer, ellers lukker vi din konto.</p>
+          <p class="falsk-link">Link i beskeden: netflix-konto-hjaelp.com/opdater</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-3"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-3"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-3" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Afsenderen ender ikke på netflix.com. ”Hej kunde” i stedet for dit navn er et typisk tegn på svindel. Log selv ind i appen, hvis du er i tvivl.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 4 af 10</h2>
+        <div class="sms">
+          <p class="afsender">SMS fra: +45 12 34 56 78</p>
+          <p>Hej det er mig, Emma! Jeg har tabt min telefon, så det her er mit nye nummer. Kan du låne mig 800 kr. på MobilePay? Du får dem i morgen.</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-4"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-4"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-4" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Et ukendt nummer siger, at det er en ven, og beder om penge. Ring til din ven på det gamle nummer, før du sender noget.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 5 af 10</h2>
+        <div class="sms">
+          <p class="afsender">Facebook-annonce fra: Nyt fra Danmark</p>
+          <p>Video: En kendt dansk tv-vært fortæller, at han tjener 20.000 kr. om ugen med en ny AI-app. ”Prøv selv for kun 1.800 kr.”</p>
+          <p class="falsk-link">Link i beskeden: smart-ai-invest.com</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-5"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-5"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-5" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Videoen er en deepfake. Det er en falsk video lavet med AI, hvor en kendt person siger noget, de aldrig har sagt. Kendte personer reklamerer ikke for at blive hurtigt rig.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 6 af 10</h2>
+        <div class="sms">
+          <p class="afsender">SMS fra: DSB</p>
+          <p>Tak for dit køb. Din billet fra Kolding St. til Aarhus H er klar i DSB-appen. God rejse!</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-6"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-6"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-6" class="svar aegte">
+          <h3>Svaret er: Ægte</h3>
+          <p>Beskeden handler om noget, du selv har købt. Der er intet link, og du skal ikke gøre noget.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 7 af 10</h2>
+        <div class="sms">
+          <p class="afsender">SMS fra: Snapchat</p>
+          <p>Snapchat-kode: 482913. Del ikke denne kode med nogen.</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-7"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-7"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-7" class="svar aegte">
+          <h3>Svaret er: Ægte</h3>
+          <p>Har du lige prøvet at logge ind, er det en normal kode. Der er intet link. Fik du koden uden at bede om den, så skift din adgangskode.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 8 af 10</h2>
+        <div class="sms">
+          <p class="afsender">Messenger fra: Mikkel Jensen</p>
+          <p>Hey! Jeg kom til at skrive dit nummer i stedet for mit. Så du har fået en kode fra Snapchat. Kan du sende den til mig? Sorry!</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-8"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-8"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-8" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Din vens konto er nok blevet hacket. Koden fra besked 7 er nøglen til DIN konto. Del den aldrig, heller ikke med venner.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 9 af 10</h2>
+        <div class="sms">
+          <p class="afsender">Telefonopkald fra: Ukendt nummer</p>
+          <p>Du får et opkald. Det lyder præcis som din mor: ”Jeg har mistet min pung. Kan du sende 2.000 kr. lige nu? Jeg kan ikke snakke længe.”</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-9"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-9"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-9" class="svar svindel">
+          <h3>Svaret er: Svindel</h3>
+          <p>Med AI kan svindlere kopiere en stemme ud fra en kort video. Læg på, og ring selv til din mor på hendes rigtige nummer.</p>
+        </div>
+      </div>
+
+      <div class="besked">
+        <h2>Besked 10 af 10</h2>
+        <div class="sms">
+          <p class="afsender">SMS fra: Tandlægen</p>
+          <p>Husk din tid hos Tandlægerne i Kolding torsdag kl. 10.30. Kan du ikke komme, så ring til klinikken.</p>
+        </div>
+        <p class="spoergsmaal">Er beskeden svindel eller ægte?</p>
+        <button
+          id="knap-10"
+          class="vis-svar"
+          aria-expanded="false"
+          aria-controls="svar-10"
+        >
+          Vis svaret
+        </button>
+        <div id="svar-10" class="svar aegte">
+          <h3>Svaret er: Ægte</h3>
+          <p>En påmindelse om en tid, du kender. Der er intet link, og du skal ikke betale eller give koder.</p>
+        </div>
+      </div>
+
+      <p><a href="viden.html#tegn">Læs mere om, hvordan du genkender svindel</a></p>
+    </main>
+
+    <footer>
+      <div class="footer-indhold">
+        <section>
+          <h2>Brug for hjælp?</h2>
+          <p>Har du spørgsmål til siden, så <a href="kontakt.html">kontakt os her</a>.</p>
+        </section>
+        <section>
+          <h2>Kontaktinformation</h2>
+          <address>
+            <p>Adresse: Havneparken 1, 6000 Kolding</p>
+            <p>E-mail: <a href="mailto:kontakt@stopscam.dk">kontakt@stopscam.dk</a></p>
+            <p>Telefon: <a href="tel:12345678">12 34 56 78</a></p>
+          </address>
+        </section>
+        <section>
+          <h2>Få hjælp andre steder</h2>
+          <ul>
+            <li><a href="https://politi.dk">Politiet (politi.dk)</a></li>
+            <li><a href="https://sikkerdigital.dk">Sikker Digital</a></li>
+            <li><a href="https://www.mitid.dk">MitID (mitid.dk)</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="copyright">StopScam.dk er et skoleprojekt på IBA Erhvervsakademi Kolding, 2026.</p>
+    </footer>
+  </body>
+</html>

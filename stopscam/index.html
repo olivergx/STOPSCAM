@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forside | StopScam.dk</title>
+    <!--Skrifttypen Atkinson Hyperlegible er lavet til svagtseende-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Vi bruger defer, så HTML'en loader før JS-->
+    <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bc7c5f3280.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--Skip til hovedindhold-->
+    <a href="#hovedindhold" class="screen-reader-text">Hop til hovedindhold</a>
+
+    <header>
+      <nav>
+        <a href="index.html" class="logo">StopScam.dk</a>
+
+        <!--Vi bruger en button, fordi knappen laver en "action" (åbner menuen)-->
+        <!--aria-expanded fortæller skærmlæseren, om menuen er åben eller lukket-->
+        <!--aria-controls fortæller skærmlæseren, at knappen styrer menuen med id="menu"-->
+        <!--aria-label fortæller skærmlæseren, hvad knappen gør (hvis der fx. kun er et ikon på knappen og ingen tekst)-->
+        <button
+          id="bars"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="åbn navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!--Navigation-->
+        <ul id="menu">
+          <li><a class="active" href="index.html">Forside</a></li>
+          <li><a href="viden.html">Viden</a></li>
+          <li><a href="scamtest.html">Scam-test</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Hovedindhold - id'et bruges af "Hop til hovedindhold"-funktionen-->
+    <main id="hovedindhold">
+      <!--Intro til emnet-->
+      <section class="hero">
+        <div class="hero-tekst">
+          <h1>Lær at genkende svindel</h1>
+          <p>
+            Falske beskeder bliver sværere at spotte. Nu kan svindlere også bruge AI til at
+            lave falske videoer og stemmer. Her lærer du at se forskel på ægte og falsk.
+          </p>
+          <a href="scamtest.html" class="knap">Tag scam-testen</a>
+          <a href="viden.html">Læs om svindel og AI</a>
+        </div>
+        <!--HUSK: Skriv en alt-tekst, der beskriver hvad dit billede faktisk viser-->
+        <!--loading="lazy" gør, at billedet først hentes, når det er tæt på skærmen-->
+        <img src="img/billede.jpg" alt="Billedet viser en dreng der sidder i Københavns Metro og bruger hans telefon. I vinduet projekteres hans mobiltelefon-skærm hvorpå han har en SMS fra PostNord, som lyder: VIGTIGT! Din pakke afventer levering. Betal 28,50 DKK porto for at modtage den her: postnord-dk.net/pakke (Frist: 3 timer!)" loading="lazy" />
+        <!--Jeg undgik at inkludere pakkenummeret samt protokollen i starten af URL  , da det er unødigt for forståelsen og forlænger en lytteoplevelse unødigt.-->
+      </section>
+
+      <!--De tre emner-->
+      <section>
+      <!--Jeg tilføjer >aria-hidden = true< her, da teksten er ligegyldig og ikke bør læses af skærmlæsere -->
+        <h2 aria-hidden="true">Læs mere om</h2>
+        <div class="emner">
+            <div class="emne">
+            <h3>AI-svindel</h3>
+            <p>Svindlere kan nu kopiere stemmer og lave falske videoer. Du tror måske ikke at du kan narres, men mange bliver det dog alligevel hver eneste dag.</p>
+            <a href="viden.html#ai">Læs om AI-svindel</a>
+          </div>
+          <div class="emne">
+            <h3>Genkend svindel</h3>
+            <p>Lær de 5 typiske tegn på en online svindler, så du kan nå at beskytte dig selv eller andre, før det er for sent.</p>
+            <a href="viden.html#tegn">Læs om tegn på svindel</a>
+          </div>
+          <div class="emne">
+            <h3>Har du været udsat for et scam?</h3>
+            <p>Har du klikket på et falsk link, SMS eller opkald fra et familiemedlem? Så gør dette med det samme.</p>
+            <a href="viden.html#hjaelp">Læs hvad du skal gøre</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-indhold">
+        <section>
+          <h2>Brug for hjælp?</h2>
+          <p>Har du spørgsmål til siden, så <a href="kontakt.html">kontakt os her</a>.</p>
+        </section>
+        <section>
+          <h2>Kontaktinformation</h2>
+          <address>
+            <p>Adresse: Havneparken 1, 6000 Kolding</p>
+            <p>E-mail: <a href="mailto:kontakt@stopscam.dk">kontakt@stopscam.dk</a></p>
+            <p>Telefon: <a href="tel:12345678">12 34 56 78</a></p>
+          </address>
+        </section>
+        <section>
+          <h2>Få hjælp andre steder</h2>
+          <ul>
+            <li><a href="https://politi.dk">Politiet (politi.dk)</a></li>
+            <li><a href="https://sikkerdigital.dk">Sikker Digital</a></li>
+            <li><a href="https://www.mitid.dk">MitID (mitid.dk)</a></li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

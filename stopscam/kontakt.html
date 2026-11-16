@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | StopScam.dk</title>
+    <!--Skrifttypen Atkinson Hyperlegible er lavet til svagtseende-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Vi bruger defer, så HTML'en loader før JS-->
+    <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bc7c5f3280.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--Skip til hovedindhold-->
+    <a href="#hovedindhold" class="screen-reader-text">Hop til hovedindhold</a>
+
+    <header>
+      <nav>
+        <a href="index.html" class="logo">StopScam.dk</a>
+
+        <!--Vi bruger en button, fordi knappen laver en "action" (åbner menuen)-->
+        <!--aria-expanded fortæller skærmlæseren, om menuen er åben eller lukket-->
+        <!--aria-controls fortæller skærmlæseren, at knappen styrer menuen med id="menu"-->
+        <!--aria-label fortæller skærmlæseren, hvad knappen gør (der er kun et ikon)-->
+        <button
+          id="bars"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="åbn navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!--Navigation-->
+        <ul id="menu">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="viden.html">Viden</a></li>
+          <li><a href="scamtest.html">Scam-test</a></li>
+          <li><a class="active" href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Hovedindhold - id'et bruges af "Hop til hovedindhold"-linket-->
+    <main id="hovedindhold">
+      <h1>Kontakt os</h1>
+      <p>Har du fået en besked, du er i tvivl om? Eller har du fundet en fejl på siden? Så skriv til os.</p>
+
+      <div class="kontakt-layout">
+        <section>
+          <h2>Kontaktinformation</h2>
+          <address>
+            <p>Adresse: Havneparken 1, 6000 Kolding</p>
+            <p>E-mail: <a href="mailto:kontakt@stopscam.dk">kontakt@stopscam.dk</a></p>
+            <p>Telefon: <a href="tel:12345678">12 34 56 78</a></p>
+          </address>
+          <h3>Svartid</h3>
+          <p>Vi svarer normalt inden for 2 hverdage.</p>
+        </section>
+
+        <section>
+          <h2>Skriv til os</h2>
+          <!--Formularen er ikke funktionel, dvs. at den ikke kan sende noget data-->
+          <form action="#">
+            <div class="felt">
+              <!--for og id kobler label og felt sammen-->
+              <label for="navn">Navn <span class="krav">(skal udfyldes)</span></label>
+              <input type="text" id="navn" name="navn" required />
+            </div>
+
+            <div class="felt">
+              <label for="email">E-mail <span class="krav">(skal udfyldes)</span></label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="felt">
+              <label for="besked">Din besked <span class="krav">(skal udfyldes)</span></label>
+              <textarea id="besked" name="besked" rows="6" required></textarea>
+            </div>
+
+            <button type="submit">Send besked</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-indhold">
+        <section>
+          <h2>Brug for hjælp?</h2>
+          <p>Har du spørgsmål til siden, så <a href="kontakt.html">kontakt os her</a>.</p>
+        </section>
+        <section>
+          <h2>Kontaktinformation</h2>
+          <address>
+            <p>Adresse: Havneparken 1, 6000 Kolding</p>
+            <p>E-mail: <a href="mailto:kontakt@stopscam.dk">kontakt@stopscam.dk</a></p>
+            <p>Telefon: <a href="tel:12345678">12 34 56 78</a></p>
+          </address>
+        </section>
+        <section>
+          <h2>Få hjælp andre steder</h2>
+          <ul>
+            <li><a href="https://politi.dk">Politiet (politi.dk)</a></li>
+            <li><a href="https://sikkerdigital.dk">Sikker Digital</a></li>
+            <li><a href="https://www.mitid.dk">MitID (mitid.dk)</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="copyright">StopScam.dk er et skoleprojekt på IBA Erhvervsakademi Kolding, 2026.</p>
+    </footer>
+  </body>
+</html>

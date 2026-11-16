@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viden | StopScam.dk</title>
+    <!--Skrifttypen Atkinson Hyperlegible er lavet til svagtseende-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Vi bruger defer, så HTML'en loader før JS-->
+    <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bc7c5f3280.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--Skip til hovedindhold-->
+    <a href="#hovedindhold" class="screen-reader-text">Hop til hovedindhold</a>
+
+    <header>
+      <nav>
+        <a href="index.html" class="logo">StopScam.dk</a>
+
+        <!--Vi bruger en button, fordi knappen laver en "action" (åbner menuen)-->
+        <!--aria-expanded fortæller skærmlæseren, om menuen er åben eller lukket-->
+        <!--aria-controls fortæller skærmlæseren, at knappen styrer menuen med id="menu"-->
+        <!--aria-label fortæller skærmlæseren, hvad knappen gør (der er kun et ikon)-->
+        <button
+          id="bars"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="åbn navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!--Navigation-->
+        <ul id="menu">
+          <li><a href="index.html">Forside</a></li>
+          <li><a class="active" href="viden.html">Viden</a></li>
+          <li><a href="scamtest.html">Scam-test</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Hovedindhold - id'et bruges af "Hop til hovedindhold"-linket-->
+    <main id="hovedindhold">
+      <h1>Sådan undgår du svindel</h1>
+      <p>
+        Svindlere vil have dine penge, dine koder eller dit MitID. Her lærer du at se, når en
+        besked er falsk. Og hvad du gør, hvis uheldet er ude.
+      </p>
+
+      <!--Indholdsfortegnelse, så man kan hoppe direkte til et afsnit-->
+      <div class="paa-siden">
+        <h2>På denne side</h2>
+        <ul>
+          <li><a href="#tegn">5 tegn på svindel</a></li>
+          <li><a href="#typer">De mest almindelige typer svindel</a></li>
+          <li><a href="#ai">AI-svindel</a></li>
+          <li><a href="#hjaelp">Hvis uheldet er ude</a></li>
+        </ul>
+      </div>
+
+      <section id="tegn">
+        <h2>5 tegn på svindel</h2>
+        <p>Her er et eksempel på en falsk SMS:</p>
+        <div class="sms">
+          <p class="afsender">SMS fra: PostNord</p>
+          <p>Din pakke kan ikke leveres. Du mangler at betale told på 12,50 kr. Betal inden 24 timer, ellers sendes pakken retur.</p>
+          <p class="falsk-link">Link i beskeden: postnord-dk-levering.com/betal</p>
+        </div>
+        <p>Læg mærke til disse tegn:</p>
+        <ol>
+          <li>Du skal handle hurtigt.</li>
+          <li>Du skal give koder eller MitID.</li>
+          <li>Linket ligner, men er ikke det rigtige.</li>
+          <li>Det lyder for godt til at være sandt.</li>
+          <li>Et ukendt nummer siger, det er en, du kender.</li>
+        </ol>
+      </section>
+
+      <section id="typer">
+        <h2>De mest almindelige typer svindel</h2>
+        <ul>
+          <li><strong>Falske pakke-SMS’er:</strong> Du skal betale lidt for at få en pakke.</li>
+          <li><strong>Falsk MitID eller bank:</strong> Du skal ”bekræfte” dig via et link.</li>
+          <li><strong>”Hej, det er mig”:</strong> En ”ven” med nyt nummer mangler penge.</li>
+          <li><strong>Falske præmier:</strong> Du har vundet, men skal betale fragt.</li>
+          <li><strong>Lån din konto ud:</strong> Du får penge for at sende dem videre. Det er ulovligt.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h2>AI-svindel</h2>
+        <p>
+          Med AI kan svindlere lave falske videoer af kendte personer. Det kaldes en deepfake.
+          De kan også kopiere en stemme ud fra en kort video fra sociale medier.
+        </p>
+        <h3>Stil dig selv 3 spørgsmål</h3>
+        <ol>
+          <li>Hvem står bag, og kan jeg stole på dem?</li>
+          <li>Skal jeg betale eller gøre noget hurtigt?</li>
+          <li>Kan jeg finde det samme hos en kilde, jeg stoler på?</li>
+        </ol>
+        <p>
+          Ringer en i familien og mangler penge? Så læg på. Ring selv tilbage på det nummer,
+          du kender.
+        </p>
+      </section>
+
+      <section id="hjaelp">
+        <h2>Hvis uheldet er ude</h2>
+        <ol>
+          <li>Ring til din bank, og spær dit kort.</li>
+          <li>Skift dine koder.</li>
+          <li>Anmeld svindlen til politiet på politi.dk.</li>
+          <li>Fortæl det til en, du stoler på. Det er ikke din skyld.</li>
+        </ol>
+        <p><a href="scamtest.html">Øv dig i scam-testen</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-indhold">
+        <section>
+          <h2>Brug for hjælp?</h2>
+          <p>Har du spørgsmål til siden, så <a href="kontakt.html">kontakt os her</a>.</p>
+        </section>
+        <section>
+          <h2>Kontaktinformation</h2>
+          <address>
+            <p>Adresse: Havneparken 1, 6000 Kolding</p>
+            <p>E-mail: <a href="mailto:kontakt@stopscam.dk">kontakt@stopscam.dk</a></p>
+            <p>Telefon: <a href="tel:12345678">12 34 56 78</a></p>
+          </address>
+        </section>
+        <section>
+          <h2>Få hjælp andre steder</h2>
+          <ul>
+            <li><a href="https://politi.dk">Politiet (politi.dk)</a></li>
+            <li><a href="https://sikkerdigital.dk">Sikker Digital</a></li>
+            <li><a href="https://www.mitid.dk">MitID (mitid.dk)</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="copyright">StopScam.dk er et skoleprojekt på IBA Erhvervsakademi Kolding, 2026.</p>
+    </footer>
+  </body>
+</html>

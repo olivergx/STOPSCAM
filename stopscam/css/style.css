@@ -1,0 +1,367 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*Generel styling*/
+
+body{
+    /*Jeg benytter Atkinson Hyperlegible som main-font da det er anset som værende den lettest-læselige font.*/
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.25rem; /*Større tekst (20px) for svagtseende. rem følger brugerens egen tekststørrelse*/
+    line-height: 1.6;
+    color: #14213d; /*Mørkeblå tekst med god kontrast til baggrunden*/
+    background-color: #eef2f7;
+}
+
+h1, h2, h3{
+    line-height: 1.25;
+    padding-bottom: 1rem;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+h3{
+    font-size: 1.25rem;
+}
+
+p, ul, ol{
+    padding-bottom: 1rem;
+    max-width: 700px; /*Korte linjer er nemmere at læse*/
+}
+
+img{
+    max-width: 100%; /*Billeder bliver aldrig bredere end skærmen*/
+    height: auto;
+}
+
+a{
+    color: #1a3fa8;
+}
+
+/*Den tydelige orange ramme, når man bruger tastaturet*/
+a:focus, button:focus, input:focus, textarea:focus{
+    outline: 4px solid #c2410c; /*Tyk orange ramme, så man kan se, hvor man er*/
+}
+
+/*Hop til hovedindhold - ligger uden for skærmen, indtil det får fokus med Tab*/
+.screen-reader-text{
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: #14213d;
+    color: white;
+}
+
+.screen-reader-text:focus{
+    left: 1em;
+    top: 1em;
+}
+
+/*NAV - mobile first, så menuen er skjult bag burger-knappen på mobil*/
+
+header{
+    background-color: white;
+}
+
+nav{
+    height: 80px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    color: #14213d;
+    padding: 0.5em;
+    font-size: 26px; /*Stor tekst i menuen på mobil*/
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .logo{
+    font-size: 24px;
+}
+
+nav ul{
+    display: none; /*Menuen er skjult på mobil, indtil man trykker på knappen*/
+    list-style-type: none;
+    padding: 0;
+}
+
+nav #bars{
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+    color: #14213d;
+    cursor: pointer;
+}
+
+/*Klassen show sættes på med JavaScript, når man trykker på knappen. Se: script.js*/
+nav .show{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    background-color: white;
+    border-top: 4px solid #1a3fa8;
+    z-index: 1;
+}
+
+/*Den aktive side er både farvet og understreget - ikke kun farve*/
+.active{
+    color: #1a3fa8;
+    text-decoration: underline;
+}
+
+/*Hovedindholdet*/
+
+main{
+    max-width: 1100px;
+    margin: 0 auto; /*Indholdet centreres på store skærme*/
+    padding: 2rem 1.5rem;
+}
+
+.knap{
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-color: #1a3fa8;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*Forside*/
+
+.hero{
+    margin-bottom: 3rem;
+}
+
+.emner{
+    display: grid;
+    grid-template-columns: 1fr; /*Én kolonne på mobil*/
+    gap: 1.5rem;
+}
+
+.emne{
+    background-color: white;
+    padding: 1.5rem;
+    border-top: 6px solid #ffd23f;
+}
+
+/*Vidensside*/
+
+section{
+    padding-bottom: 2rem;
+}
+
+/*Indholdsfortegnelsen på vidensiden*/
+.paa-siden{
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/*Scam-test*/
+
+.besked{
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 720px;
+}
+
+.spoergsmaal{
+    font-weight: bold;
+}
+
+.vis-svar{
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a3fa8;
+    background-color: white;
+    border: 2px solid #1a3fa8;
+    cursor: pointer;
+}
+
+.sms{
+    background-color: #eef2f7;
+    border: 2px solid #14213d;
+    border-radius: 12px;
+    padding: 1rem 1.25rem 0;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.afsender{
+    font-weight: bold;
+}
+
+/*Det falske link står med fed skrift, men er ikke et rigtigt link*/
+.falsk-link{
+    font-weight: bold;
+}
+
+/*Svarboksen er skjult, indtil JavaScript sætter klassen show på*/
+.svar{
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+}
+
+.besked .show{
+    display: block;
+}
+
+/*Svindel og ægte vises både med farve og med teksten i overskriften*/
+.svindel{
+    background-color: #fee2e2;
+    border-bottom: 6px solid #b91c1c;
+    color: #7f1d1d;
+}
+
+.aegte{
+    background-color: #dcfce7;
+    border-bottom: 6px solid #15803d;
+    color: #14532d;
+}
+
+/*Kontaktside*/
+
+.kontakt-layout{
+    display: grid;
+    grid-template-columns: 1fr; /*Én kolonne på mobil*/
+    gap: 2rem;
+}
+
+form{
+    background-color: white;
+    padding: 1.5rem;
+}
+
+.felt{
+    margin-bottom: 1.5rem;
+}
+
+label{
+    display: block;
+    font-weight: bold;
+}
+
+.krav{
+    font-weight: normal;
+    color: #4a4f6a;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #6b6f85;
+}
+
+button{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.9rem 2rem;
+    background-color: #1a3fa8;
+    color: white;
+    border: none;
+}
+
+/*Footer*/
+
+footer{
+    background-color: #14213d;
+    color: white;
+    padding: 2rem 1.5rem;
+}
+
+.footer-indhold{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /*Sektionerne står under hinanden på mobil*/
+}
+
+footer h2{
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+
+footer a{
+    color: white;
+}
+
+footer ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+address{
+    font-style: normal; /*html tagget address er kursiv som standard. Vi overskriver det her ved at skifte font-style til normal*/
+}
+
+/*Da projektet er mobile-first er her kun 2 media queries for henholdsvist tablet og computer*/
+
+/*Tablet*/
+
+@media screen and (min-width: 768px){
+    /*Burger-knappen skjules, og menuen vises på én linje*/
+    nav #bars{
+        display: none;
+    }
+
+    nav ul{
+        display: flex;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+    .hero{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .hero-tekst{
+        width: 35%;
+    }
+
+    .hero img{
+        width: 65%;
+    }
+
+    .kontakt-layout{
+        grid-template-columns: 1fr 2fr; /*Info til venstre, formular til højre*/
+    }
+
+    .footer-indhold{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*Desktop*/
+
+@media screen and (min-width: 1024px){
+    .emner{
+        grid-template-columns: repeat(3, 1fr); /*De tre emnebokse ved siden af hinanden*/
+    }
+}
