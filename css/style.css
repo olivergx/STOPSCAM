@@ -168,6 +168,12 @@ section{
     padding-bottom: 2rem;
 }
 
+.billedtekst{
+    font-size: 1rem;
+    color: #4a4f6a; /*opyflder fortsat 7:1*/
+    padding-top: 0.5rem;
+}
+
 /*Indholdsfortegnelsen på vidensiden*/
 .paa-siden{
     background-color: white;
